@@ -7,7 +7,7 @@ This is a temporary script file.
 
 
 
-import random, os, time
+import random, time
  
 listadepalabras = ["gato", "perro", "naranja", "manzana", "uvas", "computadora", "serpiente"]
 letraescogida= []
@@ -51,6 +51,7 @@ DIBUJOSAHORCADO = ['''
 /|\  |
 / \  |
     ===''']
+    
 
 for i in word: 
     print("_ ", end="")
@@ -58,66 +59,62 @@ print()
  
 while True:
     
-    time.sleep(1)
+    time.sleep(0.5)
     #os.system("clear")
-    print()
-    letra = input("Escoge una letra: ").lower()
+    letra = input("\nEscoge una letra: ").lower()
 
     if letra in letraescogida:
-        print("Ya intentaste con esa letra")
+        print("\nYa intentaste con esa letra")
         continue
 
     letraescogida.append(letra)
 
     if letra in word:
-        print("Acertaste!")
+        print("\nAcertaste!")
     else:
-        print("No, esa no está")
+        print("\nNo, esa letra es incorrecta")
         vidas -= 1
 
-    allLetters = True
+    pcompleta = True
     print()
     for i in word:
         if i in letraescogida:
-            print(i, end=" ")
+            print(i, end="")
         else:
             print("_ ", end="")
-            allLetters = False
+            pcompleta = False
     print()
  
-    if allLetters:
-        print()
+    if pcompleta:
         time.sleep(0.5)
-        print(f"Ganaste y te quedaron {vidas} vidas!")
+        print(f"\nGanaste y te quedaron {vidas} vidas!")
         break
      
     if vidas<=0:
-        print()
         time.sleep(0.5)
-        print(f"Perdiste! La respuesta es {word}")
-        if vidas ==0:
-            print(DIBUJOSAHORCADO[6])
+        print(f"\nPerdiste! La respuesta es {word}")
+        print(DIBUJOSAHORCADO[6])
         break
     else:
         time.sleep(0.5)
         
         if vidas ==6:
-            print(f"Te quedan {vidas} vidas")
+            print(f"\nTe quedan {vidas} vidas")
             print(DIBUJOSAHORCADO[0])
         elif vidas ==5:
-            print(f"Te quedan {vidas} vidas")
+            print(f"\nTe quedan {vidas} vidas")
             print(DIBUJOSAHORCADO[1])
         elif vidas ==4:
-            print(f"Te quedan {vidas} vidas")
+            print(f"\nTe quedan {vidas} vidas")
             print(DIBUJOSAHORCADO[2])
         elif vidas ==3:
-            print(f"Te quedan {vidas} vidas")
+            print(f"\nTe quedan {vidas} vidas")
             print(DIBUJOSAHORCADO[3])
         elif vidas ==2:
-            print(f"Te quedan {vidas} vidas")
+            print(f"\nTe quedan {vidas} vidas")
             print(DIBUJOSAHORCADO[4])
         elif vidas ==1:
-            print(f"Te queda {vidas} vida")
+            print(f"\nTe queda {vidas} vida")
             print(DIBUJOSAHORCADO[5])
         
             
